@@ -28,7 +28,7 @@ export class LocalStorageHandler {
         const localData = localStorage.getItem(key);
         const localDataTimeStamp = localStorage.getItem(this.getTimeStampKey(key));
 
-        if (!checkCacheHours) return localData;
+        if (checkCacheHours !== undefined && !checkCacheHours) return localData;
 
         // If Local Storage has the data less than cacheHours
         if (cacheHours) this.cacheHours = cacheHours;
