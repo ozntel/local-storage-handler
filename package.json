@@ -1,4 +1,45 @@
 {
     "name": "local-storage-handler",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "description": "This package will help you to set local storage items with a time stamp and retrieve them by checking how many hours ago it was set.",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "scripts": {
+        "test": "jest --config jestconfig.json",
+        "build": "tsc",
+        "format": "prettier --write \"src/**/*.ts\"",
+        "lint": "tslint -p tsconfig.json",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm test && npm run lint",
+        "preversion": "npm run lint",
+        "version": "npm run format && git add -A src",
+        "postversion": "git push && git push --tags"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ozntel/local-storage-handler.git"
+    },
+    "files": [
+        "lib/**/*"
+    ],
+    "keywords": [
+        "Local Storage",
+        "Cache",
+        "Timestamp"
+    ],
+    "author": "Ozan Tellioglu",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ozntel/local-storage-handler/issues"
+    },
+    "homepage": "https://github.com/ozntel/local-storage-handler#readme",
+    "devDependencies": {
+        "@types/jest": "^27.0.2",
+        "jest": "^27.2.5",
+        "prettier": "^2.4.1",
+        "ts-jest": "^27.0.7",
+        "tslint": "^6.1.3",
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "^4.4.4"
+    }
 }
