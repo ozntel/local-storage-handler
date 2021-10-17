@@ -32,18 +32,25 @@ let lsh = new LocalStorageHandler({});
 // You can change the cacheHours later on
 lsh.cacheHours = 12;
 
-// Set a new Local Storage Value - it will return 'success' but you don't need to assign to variable
+// Set a new Local Storage Value
+// It'll return 'success' but you don't need to assign to variable
 let setResp = lsh.setLocalStorage({ key: 'key1', value: 'value1' });
 
-// Get Local Storage Item. It will return value if the data set is not older than cached Hours or null if key not found or is older than cachedHours
+// Get Local Storage Item.
+// It'll return value if the data in local storage isn't older than specified cachedHours
+// or null if key not found or is older than cachedHours
 let val1 = lsh.getFromLocalStorage({ key: 'key1' });
 
-// You can ask for local storage item by ignoring the cacheTime. It will return no matter when the local storage key was set
+// You can ask for local storage item by ignoring the cacheTime.
+// It'll return value no matter when the local storage key was set
 let val1 = lsh.getFromLocalStorage({ key: 'key1', checkCacheHours: false });
 
 // If you want to check the value by certain cacheTime, you can also pass additionally
 let val1 = lsh.getFromLocalStorage({ key: 'key1', checkCacheHours: false, cacheHours: 5 });
 
-// Finally you can remove the local storage key, it will return 'success' if deleted or 'not-found' if it couldn't find the key. It will also delete the timestamp related to the key from local storage.
+// Finally you can remove the local storage key
+// It'll return 'success' if deleted
+// or 'not-found' if it couldn't find the key.
+// It will also delete the timestamp related to the key from local storage.
 let clearResp = lsh.removeFromLocalStorage({ key: 'key1' });
 ```
