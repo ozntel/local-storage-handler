@@ -1,6 +1,6 @@
 {
     "name": "@ozntel/local-storage-handler",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "This package will help you to set local storage items with a time stamp and retrieve them by checking how many hours ago it was set.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
