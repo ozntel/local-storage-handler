@@ -1,6 +1,6 @@
 # Local Storage Handler
 
-This package will help you to set local storage items with a time stamp and retrieve them by checking how many hours ago it was set. It is generally useful for applications where you have data, which needs to be refreshed once in a while but you don't need to refresh after each page load.
+Cookies are good options for keeping data for limited time on client side. But what if you have data, which is much bigger than cookies accept? You might still want to have `expire date` for the data. This small library will help you to achieve this. It will basically set local storage items with a time stamp and retrieve them by checking how many hours ago it was set. You decide by specifying the number of hours. It is useful for applications where you have data, which needs to be refreshed once in a while but you don't need to refresh after each page load and you want to unload your server a little bit.
 
 -   The library is written in Typescript, hence, you have built-in type support.
 
